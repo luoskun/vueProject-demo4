@@ -18,14 +18,16 @@
     </el-header>
     <el-container>
       <el-aside class="aside">
-        <el-menu unique-opened="true"
+        <el-menu
+          :router="true"
+          :unique-opened="true"
         >
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>用户管理</span>
             </template>
-            <el-menu-item index="1-1">
+            <el-menu-item index="users">
               <i class="el-icon-map-location"></i>
               <span>用户列表</span>
             </el-menu-item>
@@ -91,7 +93,9 @@
           </el-submenu>
         </el-menu>
       </el-aside>
-      <el-main class="main">Main</el-main>
+      <el-main class="main">
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -127,15 +131,15 @@ export default {
   }
 
   .header {
-    background-color: white;
+    background-color: #476f7f;
   }
 
   .aside {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(32, 127, 125, 0.22);
   }
 
   .main {
-    background-color: #10858d;
+    background-color: #476f7f;
   }
 
   .middle {
