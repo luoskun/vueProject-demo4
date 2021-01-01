@@ -38,7 +38,7 @@
               <i class="el-icon-location"></i>
               <span>权限管理</span>
             </template>
-            <el-menu-item index="2-1">
+            <el-menu-item index="rights">
               <i class="el-icon-map-location"></i>
               <span>角色列表</span>
             </el-menu-item>
@@ -47,8 +47,6 @@
               <span>权限列表</span>
             </el-menu-item>
           </el-submenu>
-
-
           <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-location"></i>
@@ -103,22 +101,22 @@
 <script>
 export default {
   name: 'home',
-  beforeCreate() {
+  beforeCreate () {
     //获取token
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token')
     //如果失效了 就跳到登陆页面
-    if (!token){
-      this.$router.push({name:'login'})
+    if (!token) {
+      this.$router.push({name: 'login'})
     }
   },
-  methods:{
-    handleSignout() {
+  methods: {
+    handleSignout () {
       //请求token
-      localStorage.clear();
+      localStorage.clear()
       //提示
-      this.$message.success("退出成功");
+      this.$message.success('退出成功')
       //调到登陆页
-      this.$router.push({name:'login'})
+      this.$router.push({name: 'login'})
     }
   }
 }

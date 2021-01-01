@@ -35,11 +35,12 @@ export default {
         data,
         meta: {msg, status}
       } = res.data
-
+      console.log(res)
       if (status === 200) {
         //登录成功保存token
         console.log(data.token)
         localStorage.setItem('token', data.token)
+        // localStorage.setItem('user', data.users)
         //登录成功跳转到首页
         this.$router.push({name: 'home'})
         this.$message.success(msg)
